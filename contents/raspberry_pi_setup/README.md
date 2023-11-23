@@ -11,7 +11,7 @@ Setting up the Raspberry Pi is simple. Firstly, install the OS onto your Raspber
 You can configure the hostname, username and password, and SSH from the imager application. To do this, after selecting the OS you want to use, a settings button will appear in the bottom right.
 
 <p align="center">
-<img src="./images/raspi_imger_point_to_cog.jpg" alt="Raspberry Pi Imager Settings Button" height=151px>
+<img src="./images/raspi_imger_point_to_cog.jpg" alt="Raspberry Pi Imager Advanced Options Button" height=151px>
 </p>
 
 After clicking on the button, the advanced settings will appear, where you can enable different features. I only configured the username and password for my project.
@@ -58,7 +58,7 @@ To do this on the Raspberry Pi 3A+:
 - Make the DNS servers and search domains the IP address of your router
 
 <p align="center">
-<img src="./images/raspi_wifi_settings.jpg" alt="Raspberry Pi Default Home Screen" width=350px>
+<img src="./images/raspi_wifi_settings.jpg" alt="Raspberry Pi Wifi Settings" width=350px>
 </p>
 
 - Click ‘Save’ and restart your Raspberry Pi
