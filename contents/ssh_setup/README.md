@@ -6,4 +6,6 @@ Since I was going to do the majority of development via my PC, I ensured that SS
 ## Initial SSH Setup
 By default, SSH comes with Raspbian, but to make sure, enter:
 
-    which ssh
+```shell
+which ssh
+```
