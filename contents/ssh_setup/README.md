@@ -196,7 +196,9 @@ sudo nano custom_config.conf
 Add the following lines to require users to login via public key authentication:
 
 ```bash
+# Disable password authentication
 PasswordAuthentication no
+# Enable public key authentication
 PubkeyAuthentication yes
 ```
 
