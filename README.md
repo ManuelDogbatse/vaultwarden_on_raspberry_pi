@@ -7,3 +7,8 @@ This project self-hosts a Bitwarden server only accessible via LAN, using the Va
 No specific hardware is required for this system. It is recommended to have a personal/work computer for configuration and testing, and a server computer to run the Vaultwarden web server. For this project, I used a Windows 11 PC and a Raspberry Pi 3 Model A+ for the server computer.
 
 ## Contents
+### [Setting Up Raspberry Pi](./contents/raspberry_pi_setup/README.md)
+Setting up the Raspberry Pi to work as a server
+
+### [Setting Up SSH](./contents/ssh_setup/README.md)
+Setting up SSH for remote connection via PC
