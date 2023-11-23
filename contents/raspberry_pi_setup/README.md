@@ -6,4 +6,5 @@ Setting up the Raspberry Pi is simple. Firstly, install the OS onto your Raspber
 <img src="./images/raspi_imger_os_select.jpg" alt="Selecting Raspberry Pi OS (32 bit)" width=350px>
 </p>
 
+> NOTE - You can configure the hostname, username and password, and SSH from the imager application. To do this, after selecting the OS you want to use, a settings button will appear in the bottom right.
 
