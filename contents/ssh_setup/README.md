@@ -207,3 +207,33 @@ Save the changes and restart the SSH server.
 ```shell
 sudo systemctl restart ssh
 ```
+
+## Connecting to SSH via PuTTY
+
+Now that the public key has been added to the Raspberry Pi, for you to connect to it using PuTTY, you have to add the private key to the configuration.
+
+Firstly, if you downloaded PuTTY correctly, you should have another application named ‘PuTTYgen’. Open it and click on the load button.
+
+<p align="center">
+<img src="./images/puttygen_load.jpg" alt="Loading private key in PuTTYgen" height=300px>
+</p>
+
+Change file types to ‘All Files’ and then go to the directory you generated the keys in. Select the private key (the one without the ‘.pub’ file extension)
+
+<p align="center">
+<img src="./images/puttygen_locate.jpg" alt="Locating private key file in File Explorer" height=300px>
+</p>
+
+Enter the passphrase you gave the key and then it will load the private key.
+
+<p align="center">
+<img src="./images/puttygen_passphrase.jpg" alt="Entering the passphrase for private key" height=300px>
+</p>
+
+Then select ‘Save private key’ and then create a folder within your generated keys’ directory named ‘putty’ and save the private key PPK file in there.
+
+<p align="center">
+<img src="./images/ppk_file.jpg" alt="PuTTY private key file for SSH" width=600px>
+</p>
+
+Now that the PPK file has been created, open PuTTY, go to the ‘Sessions’ category and load your previous configuration on PuTTY by selecting the configuration and clicking ‘Load’.
