@@ -1,8 +1,20 @@
 # Setting up the Raspberry Pi
 
+### Table of Contents
+
+[Introduction](#introduction)
+
+[Setting up the Hardware and Operating System](#setting-up-the-hardware-and-operating-system)
+
+[Setting up a Static IP Address](#setting-up-a-static-ip-address)
+
+## Introduction
+
+Before working on hosting Vaultwarden within your LAN, I needed to setup the Raspberry Pi to act as a server computer. This section outlines the steps I took to setup a Raspberry Pi, specifically a Raspberry Pi 3 Model A+.
+
 ## Setting up the Hardware and Operating System
 
-Setting up the Raspberry Pi is simple. Firstly, install the OS onto your Raspberry Pi’s microSD card with the Raspberry Pi Imager application (see [how to use Raspberry Pi Imager](https://www.youtube.com/watch?v=ntaXWS8Lk34) for guide). I chose the Raspberry Pi OS (32-bit) (or **Raspbian**) for this project, which is a port of Debian Bookworm designed for Raspberry Pis.
+Setting up the Raspberry Pi's operating system is simple. Firstly, install the OS onto your Raspberry Pi’s microSD card with the Raspberry Pi Imager application (see [how to use Raspberry Pi Imager](https://www.youtube.com/watch?v=ntaXWS8Lk34) for guide). I chose the Raspberry Pi OS (32-bit) (or **Raspbian**) for this project, which is a port of Debian Bookworm designed for Raspberry Pis.
 
 <p align="center">
 <img src="./images/raspi_imger_os_select.jpg" alt="Selecting Raspberry Pi OS (32 bit)" width=350px>

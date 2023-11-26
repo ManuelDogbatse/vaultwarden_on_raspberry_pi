@@ -1,8 +1,21 @@
 # Setting up SSH
 
+### Table of Contents
+
+[Introduction](#introduction)
+
+[Initial SSH Setup](#initial-ssh-setup)
+
+[Setting up SSH Public Key Authentication](#setting-up-ssh-public-key-authentication)
+
+[Connecting to SSH via PuTTY](#connecting-to-ssh-via-putty)
+
+[File sharing via SFTP using FileZilla](#file-sharing-via-sftp-using-filezilla)
+
+## Introduction
 A very useful feature that comes with all operating systems is Secure Shell (SSH), which is a network comunnication protocol that allows two computers to communicate with each other. With this, you can access the Raspberry Pi from your PC through the command line. Secure File Transfer Protocol (SFTP) is an extension of SSH, and is a network protocol for securely accessing and transferring files between two computers. This allows you to create and edit files on your PC, and then transfer them to your Raspberry Pi after completion.
 
-Since I was going to do the majority of development via my PC, I ensured that SSH and SFTP were configured correctly and securely.
+Since I was going to do the majority of development via my PC, I ensured that SSH and SFTP were configured correctly and securely. This section outlines the steps I took to setup a secure SSH and SFTP connection between my PC and my Raspberry Pi server.
 
 ## Initial SSH Setup
 
@@ -259,6 +272,21 @@ You will be given a prompt to ensure that you have connected to the correct SSH 
 Then enter your Raspberry Pi user’s username and then the passphrase for your key. If each credential is entered correctly, you will now have access to the machine via SSH using PuTTY.
 
 <p align="center">
-<img src="./images/putty_login_with_key.jpg" alt="Connecting to the Raspberry Pi using public key authentication" width=550px>
+<img src="./images/putty_login_with_key.jpg" alt="Logging into the Raspberry Pi using public key authentication" width=550px>
 </p>
 
+## File sharing via SFTP using FileZilla
+
+SFTP is used to transfer files between computers connected via SSH. Since SFTP is a part of SSH, you can already use it after following the SSH setup. To make it easier to user SFTP, I decided to use FileZilla, an application that displays the directories of both SSH computers and makes file transfers very easy via dragging and dropping into each computer.
+
+Firstly, download and install the Filezilla Client on your PC (see the [ FileZilla website](https://filezilla-project.org/) for the download and installation) and open it. Click on the site manager icon on the far left of the tab bar.
+
+<p align="center">
+<img src="./images/filezilla_tab_bar.jpg" alt="Locating the site manager in FileZilla" width=450px>
+</p>
+
+Then in the site manager click ‘New site’ to create a new SSH connection.
+
+<p align="center">
+<img src="./images/filezilla_create-new-site.jpg" alt="Creating a new site for Raspberry Pi SFTP connection" width=600px>
+</p>
