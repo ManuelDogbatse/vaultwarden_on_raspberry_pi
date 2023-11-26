@@ -237,3 +237,28 @@ Then select ‘Save private key’ and then create a folder within your generate
 </p>
 
 Now that the PPK file has been created, open PuTTY, go to the ‘Sessions’ category and load your previous configuration on PuTTY by selecting the configuration and clicking ‘Load’.
+
+<p align="center">
+<img src="./images/putty_load_with_key.jpg" alt="Loading previously configured SSH session in PuTTY" width=300px>
+</p>
+
+Then go to the Connection > SSH > Auth > Credentials tab.
+
+<p align="center">
+<img src="./images/putty_add_key.jpg" alt="Adding private key to PuTTY configuration" width=500px>
+</p>
+
+Click on ‘Browse’ next to ‘Private key file for authentication’ to load your private key PPK file. Save your configuration and then begin the SSH connection.
+
+You will be given a prompt to ensure that you have connected to the correct SSH server. Click ‘Accept’ to trust the connection.
+
+<p align="center">
+<img src="./images/putty_connect_with_key.jpg" alt="Connecting to the Raspberry Pi using public key authentication" width=600px>
+</p>
+
+Then enter your Raspberry Pi user’s username and then the passphrase for your key. If each credential is entered correctly, you will now have access to the machine via SSH using PuTTY.
+
+<p align="center">
+<img src="./images/putty_login_with_key.jpg" alt="Connecting to the Raspberry Pi using public key authentication" width=550px>
+</p>
+
