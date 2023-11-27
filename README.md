@@ -14,14 +14,18 @@ No specific hardware is required for this system. It is recommended to have a pe
 
 Each main section of the project is outlined in a separate markdown file. Click one of the following headers to redirect to that markdown file.
 
-### [Setting Up Raspberry Pi](./contents/raspberry_pi_setup)
+### [Setting up the Raspberry Pi](./contents/raspberry_pi_setup/)
 
 Setting up the Raspberry Pi to work as a server
 
-### [Setting Up SSH](./contents/ssh_setup)
+### [Setting up SSH](./contents/ssh_setup/)
 
 Setting up SSH for remote connection via PC
 
-### [Setting Up Docker on Raspberry Pi](./contents/docker_setup)
+### [Setting up Docker on the Raspberry Pi](./contents/docker_setup/)
 
 Setting up Docker on the Raspberry Pi for running containerised applications
+
+### [Setting up HTTPS for Vaultwarden Server](./contents/https_setup/)
+
+Setting up a domain name, a private DNS server and SSL certificates for HTTPS communication for the Vaultwarden server
