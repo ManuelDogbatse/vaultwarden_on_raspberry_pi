@@ -13,6 +13,7 @@
 [File sharing via SFTP using FileZilla](#file-sharing-via-sftp-using-filezilla)
 
 ## Introduction
+
 A very useful feature that comes with all operating systems is Secure Shell (SSH), which is a network comunnication protocol that allows two computers to communicate with each other. With this, you can access the Raspberry Pi from your PC through the command line. Secure File Transfer Protocol (SFTP) is an extension of SSH, and is a network protocol for securely accessing and transferring files between two computers. This allows you to create and edit files on your PC, and then transfer them to your Raspberry Pi after completion.
 
 Since I was going to do the majority of development via my PC, I ensured that SSH and SFTP were configured correctly and securely. This section outlines the steps I took to setup a secure SSH and SFTP connection between my PC and my Raspberry Pi server.
@@ -288,5 +289,11 @@ Firstly, download and install the Filezilla Client on your PC (see the [ FileZil
 Then in the site manager click ‘New site’ to create a new SSH connection.
 
 <p align="center">
-<img src="./images/filezilla_create-new-site.jpg" alt="Creating a new site for Raspberry Pi SFTP connection" width=600px>
+<img src="./images/filezilla_create_new_site.jpg" alt="Creating a new site for Raspberry Pi SFTP connection" width=600px>
+</p>
+
+Change the protocol to SFTP, enter your IP address in the ‘Host’ field and port in the ‘Port’ field. Then change the logon type to ‘Key file’, enter the Raspberry Pi user’s username in the ‘User’ field, and then locate the private key PPK file for the ‘key file’ field.
+
+<p align="center">
+<img src="./images/filezilla_config_new_site.jpg" alt="Configuring the new site for Raspberry Pi SFTP connection" width=400px>
 </p>
