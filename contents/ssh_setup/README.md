@@ -307,7 +307,7 @@ Click on ‘Connect’ to begin the SSH connection. You will then be prompted to
 Now you will see your PC’s directories on the left, and the Raspberry Pi’s directories on the right.
 
 <p align="center">
-<img src="./images/filezilla_layout.jpg" alt="FileZilla layout after connecting to Raspberry Pi" height=400px>
+<img src="./images/filezilla_layout.jpg" alt="FileZilla layout after connecting to Raspberry Pi" height=350px>
 </p>
 
 To transfer files, simply hold left click over the file, and then drag it into the folder you desire in the opposite computer’s directories.
