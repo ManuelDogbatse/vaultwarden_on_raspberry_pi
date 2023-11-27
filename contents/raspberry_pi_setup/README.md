@@ -74,3 +74,5 @@ To do this on the Raspberry Pi 3A+:
 </p>
 
 - Click ‘Save’ and restart your Raspberry Pi
+
+#### Next Section: [Setting Up SSH](../ssh_setup)

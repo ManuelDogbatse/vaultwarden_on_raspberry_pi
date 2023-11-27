@@ -297,3 +297,21 @@ Change the protocol to SFTP, enter your IP address in the ‘Host’ field and p
 <p align="center">
 <img src="./images/filezilla_config_new_site.jpg" alt="Configuring the new site for Raspberry Pi SFTP connection" width=400px>
 </p>
+
+Click on ‘Connect’ to begin the SSH connection. You will then be prompted to enter the passphrase for the private key. Enter the private key and click ‘OK’ to resume the SSH connection.
+
+<p align="center">
+<img src="./images/filezilla_passphrase.jpg" alt="Entering the passphrase for FileZilla SFTP connection to Raspberry Pi" width=450px>
+</p>
+
+Now you will see your PC’s directories on the left, and the Raspberry Pi’s directories on the right.
+
+<p align="center">
+<img src="./images/filezilla_layout.jpg" alt="FileZilla layout after connecting to Raspberry Pi" height=400px>
+</p>
+
+To transfer files, simply hold left click over the file, and then drag it into the folder you desire in the opposite computer’s directories.
+
+#### Previous Section: [Setting Up Raspberry Pi](../raspberry_pi_setup)
+
+#### Next Section: [...]()
