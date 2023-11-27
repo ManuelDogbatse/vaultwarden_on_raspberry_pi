@@ -21,3 +21,7 @@ Setting up the Raspberry Pi to work as a server
 ### [Setting Up SSH](./contents/ssh_setup)
 
 Setting up SSH for remote connection via PC
+
+### [Setting Up Docker on Raspberry Pi](./contents/docker_setup)
+
+Setting up Docker on the Raspberry Pi for running containerised applications
