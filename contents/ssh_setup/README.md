@@ -312,6 +312,8 @@ Now you will see your PC’s directories on the left, and the Raspberry Pi’s d
 
 To transfer files, simply hold left click over the file, and then drag it into the folder you desire in the opposite computer’s directories.
 
+---
+
 #### Previous Section: [Setting Up Raspberry Pi](../raspberry_pi_setup)
 
 #### Next Section: [Setting Up Docker on Raspberry Pi](../docker_setup)

@@ -113,6 +113,8 @@ Then log out and log back in to see the changes in effect. If you’re using SSH
 
 Now that Docker is installed correctly, you can now download the BitWarden image for our Raspberry Pi.
 
+---
+
 #### Previous Section: [Setting Up SSH](../ssh_setup)
 
 #### Next Section: [...]()
