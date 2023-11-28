@@ -31,3 +31,7 @@ Setting up Docker on the Raspberry Pi for running containerised applications
 ### [Setting up HTTPS for Vaultwarden Server](./contents/https_setup/)
 
 Setting up a domain name, a private DNS server and SSL certificates for HTTPS communication for the Vaultwarden server
+
+### [Configuring Vaultwarden](./contents/vaultwarden_config/)
+
+Configuring the Vaultwarden Docker Compose file to create admin password, add extra security, and enable email functionality via SMTP

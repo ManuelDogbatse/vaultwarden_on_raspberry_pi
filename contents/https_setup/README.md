@@ -330,8 +330,115 @@ Now you should have a new SSL certificate for your private websites.
 <img src="./images/npm_created_ssl_certificate.jpg" alt="New SSL Certificate for private domain" height=160px>
 </p>
 
+To test the functionality of the NPM reverse proxy, you should run Vaultwarden on your Raspberry Pi.
+
+To do this, on your Raspberry Pi, go to your home server directory and make a folder for the Vaultwarden Docker Compose file:
+
+```shell
+cd home_server
+mkdir vaultwarden
+cd vaultwarden
+```
+
+Create a Docker Compose file:
+
+```shell
+nano docker-compose.yml
+```
+
+Enter the following code:
+
+```yaml
+version: "3"
+services:
+  vaultwarden:
+    container_name: vaultwarden
+    image: vaultwarden/server:latest
+    restart: unless-stopped
+    volumes:
+      - vaultwarden-data:/data/
+    ports:
+      # Change the port number on the left to a different number e.g. 8049
+      - "80:80"
+volumes:
+  vaultwarden-data:
+    name: vaultwarden-data
+```
+
+Change the external port of from 80 to another number to prevent clashing with the Nginx Proxy Manager server.
+
+Save the file, then run the container:
+
+```shell
+docker compose up -d
+```
+
+The Vaultwarden server will now be running in the background.
+
+To make the domain for Vaultwarden, go to ‘Hosts > Proxy Hosts’ in Nginx Proxy Manager.
+
+<p align="center">
+<img src="./images/npm_proxy_hosts_tab.jpg" alt="Proxy Hosts tab in NPM" height=250px>
+</p>
+
+Then click ‘Add proxy host’. In this new window, enter the subdomain you created on Cloudflare, followed by your owned domain name in the ‘Domain Names’ section. Keep the scheme as ‘http’ and type in the IP address of your Raspberry Pi in the ‘Forward Hostname/IP’. Change the forward port to the port you chose for Vaultwarden to the same ser, then enable ‘Block Common Exploits’ and ‘Websockets Support’.
+
+<p align="center">
+<img src="./images/npm_proxy_host_details.jpg" alt="Changing proxy host details for Vaultwarden server" width=500px>
+</p>
+
+Then go to the ‘SSL’ tab, select the SSL certificate you generated from Cloudflare and enable ‘Force SSL’ and ‘HTTP/2 Support’. Now click ‘Save’. You will now have a proxy host pointing your custom domain to Nginx’s HTTPS page.
+
+<p align="center">
+<img src="./images/npm_created_proxy_host.jpg" alt="New proxy host for Vaultwarden" height=190px>
+</p>
+
+To be able to access the site via the domain name, change the DNS server of your PC. To do this, navigate to your settings by pressing ‘Start + I’ on your keyboard. Then go to ‘Network & Internet > WiFi’:
+
+<p align="center">
+<img src="./images/wifi_settings.jpg" alt="Going to WiFi settings" height=350px>
+</p>
+
+Click ‘Hardware properties’, then click edit for the DNS server assignment:
+
+<p align="center">
+<img src="./images/dns_server_assignment.jpg" alt="Changing DNS server assignment" height=45px>
+</p>
+
+Change from Automatic (DHCP) to Manual and enter the IPv4 (and IPv6 address if required) of your Raspberry Pi.
+
+To get your IPv6 address, enter the following into your Raspberry Pi:
+
+```shell
+ifconfig
+```
+
+<p align="center">
+<img src="./images/ifconfig.jpg" alt="Getting IPv4 and IPv6 addresses of Raspberry Pi" height=100px>
+</p>
+
+Under ‘wlan0’ you will have your IPv4 address after ‘inet’ and your link-local IPv6 address as the ‘inet6’ address with the scopeid ending in ‘\<link\>’.
+
+<p align="center">
+<img src="./images/changing_dns_server.jpg" alt="Changing the DNS server on device" width=500px>
+</p>
+
+Click ‘Save’ and now you are using your Raspberry Pi’s dnsmasq DNS server as your PC’s primary DNS server.
+
+Now go to Nginx Proxy Manager and click on the button that contains your custom domain name for Vaultwarden.
+
+<p align="center">
+<img src="./images/vaultwarden_proxy_host.jpg" alt="Going to the Vaultwarden proxy host in NPM" height=250px>
+</p>
+
+You should now be redirected to the Vaultwarden server running from your Raspberry Pi.
+
+<p align="center">
+<img src="./images/successful_vaultwarden_dns.jpg" alt="Successfully navigating to Vaultwarden using custom domain name" height=450px>
+</p>
+
 ---
 
 #### Previous Section: [Setting up Docker on the Raspberry Pi](../docker_setup/)
 
-#### Next Section: [...]()
+#### Next Section: [Configuring Vaultwarden](../vaultwarden_config/)
