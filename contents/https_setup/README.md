@@ -441,6 +441,8 @@ You should now be redirected to the Vaultwarden server running from your Raspber
 
 ## Sections
 
+#### Home Page: [Vaultwarden on Raspberry Pi](../../)
+
 #### Previous Section: [Setting up Docker on the Raspberry Pi](../docker_setup/)
 
 #### Next Section: [Configuring Vaultwarden](../vaultwarden_config/)

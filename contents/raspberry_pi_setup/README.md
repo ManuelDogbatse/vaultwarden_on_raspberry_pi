@@ -79,4 +79,6 @@ To do this on the Raspberry Pi 3A+:
 
 ## Sections
 
+#### Home Page: [Vaultwarden on Raspberry Pi](../../)
+
 #### Next Section: [Setting up SSH](../ssh_setup/)

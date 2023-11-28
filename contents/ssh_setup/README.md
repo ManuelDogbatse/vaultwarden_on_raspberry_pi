@@ -316,6 +316,8 @@ To transfer files, simply hold left click over the file, and then drag it into t
 
 ## Sections
 
+#### Home Page: [Vaultwarden on Raspberry Pi](../../)
+
 #### Previous Section: [Setting up the Raspberry Pi](../raspberry_pi_setup/)
 
 #### Next Section: [Setting up Docker on the Raspberry Pi](../docker_setup/)

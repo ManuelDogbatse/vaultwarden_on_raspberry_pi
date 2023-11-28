@@ -117,6 +117,8 @@ Now that Docker is installed correctly, you can now download the BitWarden image
 
 ## Sections
 
+#### Home Page: [Vaultwarden on Raspberry Pi](../../)
+
 #### Previous Section: [Setting up SSH](../ssh_setup/)
 
 #### Next Section: [Setting up HTTPS for Vaultwarden Server](../https_setup/)
