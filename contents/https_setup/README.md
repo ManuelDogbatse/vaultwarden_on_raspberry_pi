@@ -327,7 +327,7 @@ Simply change the propagation seconds to 30-120 seconds, and click 'Save' again.
 Now you should have a new SSL certificate for your private websites.
 
 <p align="center">
-<img src="./images/npm_created_ssl_certificate.jpg" alt="New SSL Certificate for private domain" height=180px>
+<img src="./images/npm_created_ssl_certificate.jpg" alt="New SSL Certificate for private domain" height=160px>
 </p>
 
 ---
