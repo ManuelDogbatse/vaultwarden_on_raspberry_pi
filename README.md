@@ -14,6 +14,8 @@ No specific hardware is required for this system. It is recommended to have a pe
 
 Each main section of the project is outlined in a separate markdown file. Click one of the following headers to redirect to that markdown file.
 
+> NOTE - Files created in this project can be found in the directory of the section they have been created in
+
 ### [Setting up the Raspberry Pi](./contents/raspberry_pi_setup/)
 
 Setting up the Raspberry Pi to work as a server

@@ -152,6 +152,8 @@ It should give a public IP address, which points to Google.
 
 For the Raspberry Pi to run multiple services and have each one be accessed with a domain name, it needs a reverse proxy. A reverse proxy is a part of a network that handles incoming connections coming from client devices outside the network to the servers within the network. Nginx Proxy Manager allows you to create unique domains for each service you run on your Raspberry Pi, for access via HTTP or HTTPS.
 
+To run Nginx Proxy Manager, as well as other services on the Raspberry Pi, I used Docker Compose files, which allow you to define the dependencies of one or more Docker containers such as the image used, the environment variables, the port number for network connections, the volumes for data storage and more, all in one file. This makes it very easy to start, stop, and modify Docker containers.
+
 On your Raspberry Pi, create a directory to keep the Docker Compose files for Nginx Proxy Manager and Vaultwarden:
 
 ```shell
@@ -171,7 +173,7 @@ nano docker-compose.yml
 
 Enter the following code:
 
-```yml
+```yaml
 version: "3"
 services:
   nginxproxymanager:
@@ -189,6 +191,144 @@ volumes:
   data:
   letsencrypt:
 ```
+
+Save and exit the file. Then make sure you are in the same directory as the Docker Compose file and create a new Docker container using the Docker Compose file:
+
+```shell
+docker compose up -d
+```
+
+The output should look something like this:
+
+<p align="center">
+<img src="./images/docker_compose_up.jpg" alt="Running Docker containers with Docker Compose" height=110px>
+</p>
+
+Now, enter the IP address of your Raspberry Pi, followed by port 81 on your web browser like this:
+
+<p align="center">
+<img src="./images/npm_ip.jpg" alt="Navigating to Nginx Proxy Manager (NPM) via private IP address" height=60px>
+</p>
+
+You will be directed to the Nginx Proxy Manager Web Interface. Enter ‘admin@example.com’ as the email address and ‘changeme’ as the password. Then click ‘Sign In’
+
+<p align="center">
+<img src="./images/npm_login_first.jpg" alt="Logging into NPM for the first time" height=300px>
+</p>
+
+After signing in, you will be given a prompt to change your account details. You must change the email address and password to begin using NPM.
+
+<p align="center">
+<img src="./images/npm_change_email.jpg" alt="Changing the default email in NPM" height=300px>
+</p>
+
+<p align="center">
+<img src="./images/npm_change_password.jpg" alt="Logging into NPM for the first time" height=370px>
+</p>
+
+After changing your account details, you will now be able to access the NPM web application. Before assigning IP addresses and ports to domain names, you need to get SSL certificates for your HTTPS websites.
+
+To do this, firstly go to the ‘SSL Certificates’ tab in NPM.
+
+<p align="center">
+<img src="./images/npm_ssl_certificates_tab.jpg" alt="SSL Certificates Tab in NPM" height=90px>
+</p>
+
+<p align="center">
+<img src="./images/npm_add_certificate.jpg" alt="Adding an SSL certificate in NPM" height=180px>
+</p>
+
+Click ‘Add SSL Certificate’, then enter the subdomain you entered in Cloudflare for your private network’s Nginx server, followed by the domain name you own, and then press ENTER. Make sure to add the wildcard version to allow your services to use SSL certificates.
+
+<p align="center">
+<img src="./images/npm_domain_names.jpg" alt="Adding private domain name to SSL certificate" height=110px>
+</p>
+
+Then click the ‘Use a DNS Challenge’ toggle, and then change the DNS Provider to Cloudflare.
+
+<p align="center">
+<img src="./images/npm_dns_challenge_setup.jpg" alt="Selecting Cloudflare as DNS provider" height=350px>
+</p>
+
+To retrieve your Cloudflare API token for your domain name, log in to Cloudflare, click the profile icon in the top right and select ‘My Profile’.
+
+<p align="center">
+<img src="./images/cloudflare_my_profile.jpg" alt="My Profile button in Cloudflare" height=170px>
+</p>
+
+Then Click ‘API Tokens’ on the left.
+
+<p align="center">
+<img src="./images/cloudflare_api_tokens_tab.jpg" alt="API Tokens tab in Cloudflare" height=250px>
+</p>
+
+To the right of ‘API Tokens’, Click ‘Create Token’.
+
+<p align="center">
+<img src="./images/cloudflare_create_token.jpg" alt="Creating an API token in Cloudflare" height=120px>
+</p>
+
+Click the ‘Edit Zone DNS’ token template.
+
+<p align="center">
+<img src="./images/cloudflare_select_token_template.jpg" alt="Selecting the API token template in Cloudflare" height=120px>
+</p>
+
+Click ‘Edit Zone DNS’ to change the token name.
+
+<p align="center">
+<img src="./images/cloudflare_change_token_name.jpg" alt="Changing the API token name in Cloudflare" height=100px>
+</p>
+
+Under ‘Zone Resources’, select your domain name.
+
+<p align="center">
+<img src="./images/cloudflare_select_token_zone.jpg" alt="Selecting the API token DNS zone in Cloudflare" height=110px>
+</p>
+
+Then click ‘Continue to summary’ > ‘Create Token’ to create your API token.
+
+<p align="center">
+<img src="./images/cloudflare_token_summary.jpg" alt="Summarising the API token in Cloudflare" height=220px>
+</p>
+
+You will now have an API token for your domain name for issuing SSL certificates. Copy the API token generated and replace the placeholder token with your API token in the ‘Credentials File Content’ section of your NPM SSL certificates window.
+
+<p align="center">
+<img src="./images/cloudflare_api_token.jpg" alt="Generated API token in Cloudflare" height=180px>
+</p>
+
+<p align="center">
+<img src="./images/npm_cloudflare_token_before.jpg" alt="Removing placeholder Cloudflare API token to SSL certificate in NPM" height=150px>
+</p>
+
+<p align="center">
+<img src="./images/npm_cloudflare_token_after.jpg" alt="Adding Cloudflare API token to SSL certificate in NPM" height=190px>
+</p>
+
+Agree to the Let’s Encrypt Terms of Service, then click ‘Save’.
+
+<p align="center">
+<img src="./images/npm_ssl_agree.jpg" alt="Agreeing to Terms of Service for SSL certificate" height=140px>
+</p>
+
+If you are given this error:
+
+<p align="center">
+<img src="./images/npm_internal_error.jpg" alt="Internal Error for SSL certificate creation" height=290px>
+</p>
+
+Simply change the propagation seconds to 30-120 seconds, and click 'Save' again.
+
+<p align="center">
+<img src="./images/npm_propagation_seconds.jpg" alt="Changing the propagation seconds" height=120px>
+</p>
+
+Now you should have a new SSL certificate for your private websites.
+
+<p align="center">
+<img src="./images/npm_created_ssl_certificate.jpg" alt="New SSL Certificate for private domain" height=180px>
+</p>
 
 ---
 
