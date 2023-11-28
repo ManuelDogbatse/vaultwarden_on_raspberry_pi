@@ -23,6 +23,8 @@ In order for Vaultwarden to work, it must be accessed via HTTPS, which requires 
 3. Setting up a private DNS server with dnsmasq
 4. Creating HTTPS domain names with Nginx Proxy Manager and Cloudflare DNS
 
+This section outlines the steps I took to setup HTTPS for my Vaultwarden server on my Raspberry Pi.
+
 ## Acquiring a Public Domain
 
 > NOTE - If you already have a public domain, then skip this step.
