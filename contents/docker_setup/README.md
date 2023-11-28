@@ -6,6 +6,8 @@
 
 [Installing Docker](#installing-docker)
 
+[Sections](#sections)
+
 # Introduction
 
 For Bitwarden to be hosted on the Raspberry Pi, I needed to install Docker onto it. Docker is an application that virtualises application environments by creating images which describe the runtime environment, dependencies, and operating system that an application will run on. Then Docker runs an instance of an image called a container, which can run the application on any computer with Docker installed. This makes it easier to develop apps and then share them to other machines with different operating systems or different distributions of an operating system without issues with the runtime environment.
@@ -113,7 +115,7 @@ Then log out and log back in to see the changes in effect. If you’re using SSH
 
 Now that Docker is installed correctly, you can now download the BitWarden image for our Raspberry Pi.
 
----
+## Sections
 
 #### Previous Section: [Setting up SSH](../ssh_setup/)
 

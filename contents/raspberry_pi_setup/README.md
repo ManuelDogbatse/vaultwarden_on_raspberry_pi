@@ -8,6 +8,8 @@
 
 [Setting up a Static IP Address](#setting-up-a-static-ip-address)
 
+[Sections](#sections)
+
 ## Introduction
 
 Before working on hosting Vaultwarden within your LAN, I needed to setup the Raspberry Pi to act as a server computer. This section outlines the steps I took to setup a Raspberry Pi, specifically a Raspberry Pi 3 Model A+.
@@ -75,6 +77,6 @@ To do this on the Raspberry Pi 3A+:
 
 - Click ‘Save’ and restart your Raspberry Pi
 
----
+## Sections
 
 #### Next Section: [Setting up SSH](../ssh_setup/)

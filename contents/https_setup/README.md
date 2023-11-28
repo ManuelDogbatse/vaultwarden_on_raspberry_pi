@@ -12,6 +12,8 @@
 
 [Creating HTTPS Domain Names with Nginx Proxy Manager and Cloudflare DNS](#creating-https-domain-names-with-nginx-proxy-manager-and-cloudflare-dns)
 
+[Sections](#sections)
+
 ## Introduction
 
 In order for Vaultwarden to work, it must be accessed via HTTPS, which requires these 4 main steps:
@@ -437,7 +439,7 @@ You should now be redirected to the Vaultwarden server running from your Raspber
 <img src="./images/successful_vaultwarden_dns.jpg" alt="Successfully navigating to Vaultwarden using custom domain name" height=450px>
 </p>
 
----
+## Sections
 
 #### Previous Section: [Setting up Docker on the Raspberry Pi](../docker_setup/)
 

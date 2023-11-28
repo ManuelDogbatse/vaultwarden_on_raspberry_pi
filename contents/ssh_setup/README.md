@@ -12,6 +12,8 @@
 
 [File sharing via SFTP using FileZilla](#file-sharing-via-sftp-using-filezilla)
 
+[Sections](#sections)
+
 ## Introduction
 
 A very useful feature that comes with all operating systems is Secure Shell (SSH), which is a network comunnication protocol that allows two computers to communicate with each other. With this, you can access the Raspberry Pi from your PC through the command line. Secure File Transfer Protocol (SFTP) is an extension of SSH, and is a network protocol for securely accessing and transferring files between two computers. This allows you to create and edit files on your PC, and then transfer them to your Raspberry Pi after completion.
@@ -312,7 +314,7 @@ Now you will see your PC’s directories on the left, and the Raspberry Pi’s d
 
 To transfer files, simply hold left click over the file, and then drag it into the folder you desire in the opposite computer’s directories.
 
----
+## Sections
 
 #### Previous Section: [Setting up the Raspberry Pi](../raspberry_pi_setup/)
 
