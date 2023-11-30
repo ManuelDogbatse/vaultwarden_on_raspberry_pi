@@ -77,6 +77,10 @@ For this method, install Rclone on your PC (see [Rclone downloads](https://rclon
 
 If you are using Windows, go to the folder where the ‘rclone.exe’ file is and right click > Open in Terminal (or Powershell, or CMD). Then type:
 
+```powershell
+.\rclone authorize "onedrive"
+```
+
 <p align="center">
 <img src="./images/rclone_authorize_onedrive.jpg" alt="Authorising Onedrive using PC" height=38px>
 </p>
@@ -216,10 +220,28 @@ docker compose up -d
 
 Now your Vaultwarden data will backup automatically to your cloud storage system. To confirm this, check your cloud storage to see if the backup folder has been created. As a test, I set the cron schedule to ‘\* \* \* \* \*’ to create a backup every minute.
 
-Here is the updated Vaultwarden backup folder in my Onedrive account:
+Here is the updated Vaultwarden backup folder in OneDrive:
 
 <p align="center">
-<img src="./images/bitwarden_backup_folder.jpg" alt="Bitwarden Backup folder in Onedrive" height=160px>
+<img src="./images/bitwarden_backup_folder.jpg" alt="'BitwardenBackup' folder and backup zip file in Onedrive" height=160px>
+</p>
+
+Here is the email sent by the Docker Vaultwarden backup container:
+
+<p align="center">
+<img src="./images/vaultwarden_backup_email.jpg" alt="Vaultwarden backup email" height=160px>
+</p>
+
+Here is what a backup zip file looks like in the file explorer:
+
+<p align="center">
+<img src="./images/backup_zip.jpg" alt="Vaultwarden backup email" height=170px>
+</p>
+
+As you can see, the files are password protected by the 'ZIP_PASSWORD' environment variable for the Vaultwarden backup container. When extracting the backup zip file, enter the password you provided for the environment variable:
+
+<p align="center">
+<img src="./images/backup_password_prompt.jpg" alt="Vaultwarden backup email" height=180px>
 </p>
 
 ## Sections
