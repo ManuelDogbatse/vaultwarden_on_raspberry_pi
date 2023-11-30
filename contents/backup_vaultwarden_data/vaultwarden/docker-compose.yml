@@ -1,0 +1,27 @@
+version: "3"
+services:
+  vaultwarden:
+    container_name: vaultwarden
+    image: vaultwarden/server:latest
+    restart: unless-stopped
+    volumes:
+      - vaultwarden-data:/data/
+    ports:
+      - "80:80"
+    env_file:
+      - vaultwarden.env
+  backup:
+    container_name: vaultwarden-backup
+    image: ttionya/vaultwarden-backup:latest
+    restart: unless-stopped
+    env_file:
+      - backup.env
+    volumes:
+      - vaultwarden-data:/bitwarden/data/
+      - vaultwarden-rclone-data:/config/
+volumes:
+  vaultwarden-data:
+    name: vaultwarden-data
+  vaultwarden-rclone-data:
+    external: true
+    name: vaultwarden-rclone-data
