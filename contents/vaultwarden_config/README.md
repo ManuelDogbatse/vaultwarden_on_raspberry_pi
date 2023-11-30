@@ -260,4 +260,4 @@ Then select Send test email, and if all configurations are correct, a popup will
 
 #### Previous Section: [Setting up HTTPS for Vaultwarden Server](../https_setup/)
 
-#### Next Section: [...]()
+#### Next Section: [Backing Up Vaultwarden Data](../backup_vaultwarden_data/)

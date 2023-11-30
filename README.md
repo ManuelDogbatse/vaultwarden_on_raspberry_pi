@@ -35,3 +35,7 @@ Setting up a domain name, a private DNS server and SSL certificates for HTTPS co
 ### [Configuring Vaultwarden](./contents/vaultwarden_config/)
 
 Configuring the Vaultwarden Docker Compose file to create admin password, add extra security, and enable email functionality via SMTP
+
+### [Backing up Vaultwarden Data](./contents/backup_vaultwarden_data/)
+
+Backing up the Vaultwarden data to the cloud using Rclone and restoring the data of any given backup to the Vaultwarden server
